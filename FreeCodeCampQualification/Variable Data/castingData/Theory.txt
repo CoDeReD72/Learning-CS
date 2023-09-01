@@ -1,0 +1,42 @@
+﻿// Changed from C# due to Program.cs file name
+// The compiler will allow safe conversions like casting an int to a double or int to str.
+
+int first = 2;
+string second = "4";
+int result = first +  int.Parse(second);
+Console.WriteLine(result);
+
+int myInt = 3;
+Console.WriteLine($"int: {myInt}");
+
+decimal myDecimal = myInt;
+Console.WriteLine($"decimal: {myDecimal}");
+
+decimal myDecimal2 = 3.14m;
+Console.WriteLine($"decimal: {myDecimal2}");
+
+int myInt2 = (int)myDecimal2;
+Console.WriteLine($"int: {myInt2}");
+
+// ToString - converts a value to a string i.e. 3.ToString() returns "3"
+// Parse - converts a string to a value i.e. int.Parse("3") returns 3
+// Convert - converts a value to another type i.e. Convert.ToInt32("3.14") returns 3
+
+// Narrowing - Converting to a type with less precision
+// Widening - Converting to a type with more precision
+
+//Convert.ToInt32("3.14") ROUNDS the value
+
+// TryParse - converts a string to a value and returns a boolean indicating success or failure
+string value = "102";
+int result = 0;
+if (int.TryParse(value, out result))
+{
+    Console.WriteLine($"Measurement: {result}");
+}
+else
+{
+    Console.WriteLine("Unable to report the measurement.");
+}
+
+Console.WriteLine($"Measurement (w/ offset): {50 + result}");
